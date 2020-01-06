@@ -1,4 +1,4 @@
-package com.qedge;
+package com.qedge.jan2020;
 
 public class PrintOnConsole {
 
