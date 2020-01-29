@@ -1,47 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
     <line>
-      <![CDATA[executing before test method]]>
+      <![CDATA[no of rows are==10     no of columns are==4]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="47" started-at="2020-01-28T14:49:18Z" finished-at="2020-01-28T14:49:18Z">
+  <suite name="Default suite" duration-ms="9893" started-at="2020-01-29T18:06:12Z" finished-at="2020-01-29T18:06:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="47" started-at="2020-01-28T14:49:18Z" finished-at="2020-01-28T14:49:18Z">
-      <class name="jan27.UsingExtentReports">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:jan27.UsingExtentReports@6cc4c815]" name="beforeTest" is-config="true" duration-ms="15" started-at="2020-01-28T20:19:18Z" finished-at="2020-01-28T20:19:18Z">
+    <test name="Default test" duration-ms="9893" started-at="2020-01-29T18:06:12Z" finished-at="2020-01-29T18:06:22Z">
+      <class name="jan29.DataDriven">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:jan29.DataDriven@1bce4f0a]" name="setUp" is-config="true" duration-ms="4275" started-at="2020-01-29T23:36:12Z" finished-at="2020-01-29T23:36:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="Login()[pri:0, instance:jan29.DataDriven@1bce4f0a]" name="Login" duration-ms="4783" started-at="2020-01-29T23:36:16Z" finished-at="2020-01-29T23:36:21Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"*[name='txtUsername']"}
+  (Session info: chrome=79.0.3945.130)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:13:22.693Z'
+System info: host: 'LENOVO-PC', ip: '192.168.0.6', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\sridhar\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:60329}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: ff519efb0a4e04d609ec0fa95cb5c60a
+*** Element info: {Using=name, value=txtUsername}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='txtUsername']"}
+  (Session info: chrome=79.0.3945.130)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:13:22.693Z'
+System info: host: 'LENOVO-PC', ip: '192.168.0.6', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\sridhar\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:60329}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: ff519efb0a4e04d609ec0fa95cb5c60a
+*** Element info: {Using=name, value=txtUsername}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:400)
+	at org.openqa.selenium.By$ByName.findElement(By.java:284)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at jan29.DataDriven.Login(DataDriven.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
             <line>
-              <![CDATA[executing before test method]]>
+              <![CDATA[no of rows are==10     no of columns are==4]]>
             </line>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="tc1()[pri:0, instance:jan27.UsingExtentReports@6cc4c815]" name="tc1" duration-ms="0" started-at="2020-01-28T20:19:18Z" finished-at="2020-01-28T20:19:18Z">
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:jan29.DataDriven@1bce4f0a]" name="tearDown" is-config="true" duration-ms="802" started-at="2020-01-29T23:36:21Z" finished-at="2020-01-29T23:36:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:jan27.UsingExtentReports@6cc4c815]" name="afterMethod" is-config="true" duration-ms="16" started-at="2020-01-28T20:19:18Z" finished-at="2020-01-28T20:19:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:jan27.UsingExtentReports@6cc4c815]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-28T20:19:18Z" finished-at="2020-01-28T20:19:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:jan27.UsingExtentReports@6cc4c815]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-01-28T20:19:18Z" finished-at="2020-01-28T20:19:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:jan27.UsingExtentReports@6cc4c815]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-28T20:19:18Z" finished-at="2020-01-28T20:19:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="tc2()[pri:0, instance:jan27.UsingExtentReports@6cc4c815]" name="tc2" duration-ms="0" started-at="2020-01-28T20:19:18Z" finished-at="2020-01-28T20:19:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc2 -->
-      </class> <!-- jan27.UsingExtentReports -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- jan29.DataDriven -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
