@@ -7,6 +7,7 @@ import java.util.Properties;import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -36,6 +37,7 @@ public class PropertiesFile {
 		String ActUrl=driver.getCurrentUrl();
 		try {
 			Assert.assertEquals(ActUrl.contains(ExpUrl), true)	;
+			Reporter.log("Login sucess",true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());

@@ -7,6 +7,9 @@ import java.io.FileOutputStream;
 
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -39,7 +42,7 @@ public class DataDriven {
 
 	@BeforeTest
 	public void setUp() {
-		reports=new ExtentReports("./reports/login.html");
+		reports=new ExtentReports("./Reports/login.html");
 		driver=new ChromeDriver();
 		
 	}
@@ -55,11 +58,13 @@ public class DataDriven {
 		int cc=row.getLastCellNum();
 		Reporter.log("no of rows are=="+rc+"     "+"no of columns are=="+cc);
 		
-		for(int i=1;i<rc;i++) {
+		for(int i=1;i<=rc;i++) {
 			//test case starts from here for extent reports
 		test=reports.startTest("Verfying Login test case");
-		driver.navigate().to("http://orangehrm.qedge.com");
-		//driver.manage().window().maximize();
+		test.assignAuthor("sridhar QA Engineer");
+		test.assignCategory("Functional_Testing");
+		driver.navigate().to("http://orangehrm.qedgetech.com/");
+		driver.manage().window().maximize();
 		
 		String username=ws.getRow(i).getCell(0).getStringCellValue();
 		String password=ws.getRow(i).getCell(1).getStringCellValue();
@@ -73,14 +78,27 @@ public class DataDriven {
 			//take screenshot for test case pass
 			screen=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			//write the screenshot file to a folder
-			FileUtils.copyFile(screen, new File("D://selenium//screens//iterations	"+i+"Loginpage.png"));
+			FileUtils.copyFile(screen, new File("D:\\TestingWS\\BankingPrimus\\screens\\"+i+"Loginpage.png"));
 			//
 			Reporter.log("Login success",true);
-			test.log(LogStatus.PASS, "Login success=="+ExpUrl+"   "+ActUrl);
-			//write login result into excel
+			test.log(LogStatus.PASS, "Login success=="+ExpUrl+"==== "+ActUrl);
+			//write login result into excel			
 			ws.getRow(i).createCell(2).setCellValue("login success");
 			//write test status pass into excel
 			ws.getRow(i).createCell(3).setCellValue("PASS");
+			//style and font
+			CellStyle style=wb.createCellStyle();
+			Font font=wb.createFont();
+			font.setBold(true);
+			font.setColor(IndexedColors.GREEN.getIndex());
+			style.setFont(font);
+			ws.getRow(i).getCell(3).setCellStyle(style);
+			
+			
+			
+			
+			
+			
 						
 		}//if
 		else {
@@ -88,7 +106,7 @@ public class DataDriven {
 			//take screenshot for test case pass
 			screen=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			//write the screenshot file to a folder
-			FileUtils.copyFile(screen, new File("D://selenium//screens//iterations	"+i+"Loginpage.png"));
+			FileUtils.copyFile(screen, new File("D:\\TestingWS\\BankingPrimus\\screens\\"+i+"Loginpage.png"));
 			//
 			Reporter.log("Login Failed",true);
 			test.log(LogStatus.FAIL, "Login failed=="+ExpUrl+"   "+ActUrl);
@@ -97,6 +115,14 @@ public class DataDriven {
 			ws.getRow(i).createCell(2).setCellValue(msg);
 			//write test status pass into excel
 			ws.getRow(i).createCell(3).setCellValue("FAIL");
+			//style and font
+			CellStyle style=wb.createCellStyle();
+			Font font=wb.createFont();
+			font.setBold(true);
+			font.setColor(IndexedColors.RED.getIndex());
+			style.setFont(font);
+			ws.getRow(i).getCell(3).setCellStyle(style);
+			
 						
 		}//else
 		reports.endTest(test);
@@ -104,7 +130,7 @@ public class DataDriven {
 		
 		}//for
 		fi.close();
-		//write this excel into final excel which is sent to testlead
+		//write this excel into final excel which is sent to test lead
 		fo=new FileOutputStream("D://Results.xlsx");
 		wb.write(fo);
 		fo.close();
